@@ -1,0 +1,95 @@
+% gives the denominator, useful to check if number is even or not
+e.g. 25%2 > 0, so number is odd
+
+indexing - define position in strings using [index]
+for instance str='Hello World'
+str[0] is H, str[-1] is d
+
+slicing is to get a portion of the string using indexes
+in prev example str[0:5]is Hello which is from index of 0 upto index 5 which is space but not including
+index 5
+str[::2] will give the value Hlowic where it skips to second indexes but goes from beginning to end
+
+To reverse a string str[::-1]
+strings are not mutable, you cannot replace the character in a given index position
+
+len(str) will give string length
+
+String formatting:
+print(f'The {var} is greater than 0')
+this will allow a variable var to be concatenated to the string
+
+Lists:
+Ordered sequence of objects, numbers, characters etc. supports slicing and indexing
+lists are mutable, you can choose an element in index and replace it with new value by assignment
+list_name.append(value) appends a value at the end of the list
+list_name.pop() removes an element from the end of the list
+list_name.pop(index_location) will pop the element in the index position
+new_list.sort() will sort the list in alphabetical order, is an inplace function, does not return a value
+Python None type indicates a none object
+list_name.reverse() will reverse the list
+
+Dictionaries:
+unordered mapping for storing objects. organized by key, value pair. list is ordered sequence of objects
+dictonaries advantage is user can grab an object without needing to know the index location, only require the key associated
+dictionaires are unordered, cannot be sorted. faster retrival.
+dict={'key':'value', 'key1':'value1'}
+good for lookup
+to get value dict['key1']
+dictionaries can hold any datatype including lists and other dictionatires
+d{'k1':1,'k2':['a','b','c'],'k3':{'key1':'test','key2':'name'}}
+to get the value of key2
+d['k3']['key2']
+d.keys() will return all the keys in the dictionary
+d.values() will return all the values in the dictionary
+key:value pairs are returned by d.items()
+
+Tuples:
+similar to list but are immutable. identified by () whereas lists are identified by [] and dictionaries are identified by {}
+type(object) provides the type , string, list, number etc
+tuples have 2 functions
+tuple_name.count(object) gives the number of times an object occurs in a tuple
+tuple_name.index(object) gives the first index location of the object
+tuples are used when objects are passed around in programs and where accidental reassignment needs to be avoided
+useful to maintain integrity of data
+
+Sets:
+unordered sets of unique elements, cannot have duplicates
+myset=set()
+myset.add(1)
+add function adds an element to a set
+{1} braces like dictionaries but no key value pair
+list can be cast to sets
+list=[1,1,2,2]
+set(list) converts this list to a set
+{1,2}
+sets have no particular order
+
+Booleans:
+True/False - case sensitive
+element=None is assigned a non data type
+
+IO operations:
+variable=open('filepath') to open a file
+variable.read() reads the entire content of the file in the same line
+if you run the .read() function it will return null because the cursor is now at the end of the file
+so variable.seek(0) to go back to beginning of the file
+variable.readlines() dumps each line as a list item and then you can use index to get the contents of the individual lines
+filepath when a file is opened will need to be provided with \\ for windows e.g. c:\\filepath.txt
+for mac and linux it should be variable=open("/users/filepath.txt")
+after reading the file it should be closed with the close funtion if open is used
+variable.close()
+
+if you want to avoid the open/close issue use the with statement
+with open('filepath.txt') as variable:
+    var1=variable.read()
+
+to write files use the open function with mode='w'
+with open('filepath', mode='w') as variable:
+    var2=variable.write('contents')
+this will overwrite the file with contents
+
+mode=r is for read, w is for write, a is for append, r+ is for reading and writing, w+ is for writing and reading
+for append write is still the function to append the data
+
+
